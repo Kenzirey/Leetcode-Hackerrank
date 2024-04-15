@@ -19,20 +19,13 @@ public class TwoSum {
 
 	public int[] twoSum(int[] nums, int target) {
 		HashMap<Integer, Integer> map = new HashMap<>();
-		//Use hash table, but how.
-		//How to make this into a stream / lambda expression?
-
-		//Store elements and their indices into the HashMap.
-		for (int i = 0; i < nums.length; i++) {
-			map.put(nums[i], i);
-		}
-
 		//For each element nums[i], calculate complement by subtracting it from the target.
 		//Complement refers to value that when added to a given number, results in the target.
 		//If target is 9, and current number is 2 then the complement would be 7.
 		//complement = target - nums[i].
 		for (int i = 0; 1 < nums.length; i++) {
 			int complement = target - nums[i];
+			map.put(nums[i], i);
 			if (map.containsKey(complement) && map.get(complement) != i) {
 				return new int[]{i, map.get(complement)};
 			}
