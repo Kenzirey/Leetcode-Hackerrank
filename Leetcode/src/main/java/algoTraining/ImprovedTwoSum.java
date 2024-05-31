@@ -1,15 +1,21 @@
 package algoTraining;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
-
 /**
  * What data structure can help outperform the brute force method?
  * Can use hash table to remember values that have been checked ONCE.
  */
 public class ImprovedTwoSum {
 
+	/**
+	 * A two-pass method of using a HashMap to hold the mappings.
+	 *
+	 * @param array the array to search through.
+	 *
+	 * @param target the target value we want our two sums to add into to.
+	 *
+	 * @return an int array containing the index of the integers used.
+	 */
 	public int[] improvedTwoSum(int[] array, int target) {
 		HashMap<Integer, Integer> table = new HashMap();
 
@@ -39,7 +45,7 @@ public class ImprovedTwoSum {
 	public static void main(String[] args) {
 		ImprovedTwoSum improvedTwoSum = new ImprovedTwoSum();
 		int [] testCase = {1, 15, 9, 4, 6};
-		int target = 12;
+		int target = 19;
 		int[] result = improvedTwoSum.improvedTwoSum(testCase, target);
 	}
 
